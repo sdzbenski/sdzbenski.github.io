@@ -10,23 +10,12 @@
 .author-portrait{display:block;flex:0 0 180px;width:180px;height:180px;object-fit:cover;object-position:center 39%;border-radius:50%;border:4px solid var(--ivory);box-shadow:0 8px 25px #1b2a3020}
 @media(max-width:520px){.about-heading{flex-direction:column-reverse;align-items:flex-start;gap:24px}.author-portrait{flex-basis:auto;width:160px;height:160px}.about-heading h2{margin-bottom:0}}
 
-
-/* Mobile hero actions: keep each link on its own row. */
-@media screen and (max-width: 800px) {
-  .hero-copy > a.button {
-    display: flex;
-    width: max-content;
-    max-width: 100%;
-    margin: 0 0 18px 0;
-    justify-content: center;
-  }
-  .hero-copy > a.text-link {
-    display: block;
-    clear: both;
-    width: max-content;
-    max-width: 100%;
-    margin: 0;
-    font-size: .88rem;
-    line-height: 1.6;
-  }
+/* Hero actions: deliberate desktop and mobile layout */
+.hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:18px 22px; }
+.hero-actions .button { flex:0 0 auto; }
+.hero-actions .text-link { display:inline-block; }
+@media (max-width:800px) {
+  .hero-actions { flex-direction:column; align-items:flex-start; gap:16px; }
+  .hero-actions .button { width:auto; max-width:100%; }
+  .hero-actions .text-link { display:block; max-width:100%; line-height:1.5; }
 }
